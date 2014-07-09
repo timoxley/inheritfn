@@ -59,6 +59,12 @@ function's value with the same key is shadowed by this new value.
 on the new function will not restore access to the original function's
 key**. You'll need to delete the key from `newFn.__proxy__`.
 
+## See Also
+
+* [timoxley/beforefn](http://github.com/timoxley/beforefn)
+* [timoxley/afterfn](http://github.com/timoxley/afterfn)
+* [timoxley/guardfn](http://github.com/timoxley/guardfn)
+
 ## License
 
 MIT
