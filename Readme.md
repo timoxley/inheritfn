@@ -1,12 +1,11 @@
 # inheritfn
 
-`Object.create()` for functions.
+Prototypical inheritance for functions.
 
 Enables you to wrap a function with another function without losing
 access to values defined on the original function.
 
-Implements copy-on-write behaviour like Object.create.
-
+Implements copy-on-write behaviour like `Object.create`.
 
 ## Example
 
@@ -51,6 +50,7 @@ wrapper.__proto__ == original // => true
 
 `inheritfn` implements copy-on-write behaviour similarly to
 `Object.create`:
+
 * If a value on the original function changes, this is reflected on the
 new function.
 * If you write to a key on the new function, access to the original

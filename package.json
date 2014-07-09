@@ -1,7 +1,7 @@
 {
   "name": "inheritfn",
   "version": "1.0.0",
-  "description": "Inherit properties from other functions. Object.create() for functions.",
+  "description": "Prototypical inheritance for functions.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -9,10 +9,26 @@
   "scripts": {
     "test": "tape test/*.js"
   },
-  "keywords": ["inheritance", "functional", "function", "aop", "prototype"],
+  "keywords": [
+    "inheritance",
+    "functional",
+    "function",
+    "aop",
+    "prototype"
+  ],
   "author": "Tim Oxley <secoif@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "tape": "^2.13.3"
-  }
+  },
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/timoxley/inheritfn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/timoxley/inheritfn/issues"
+  },
+  "homepage": "https://github.com/timoxley/inheritfn"
 }
