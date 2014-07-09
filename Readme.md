@@ -36,8 +36,8 @@ console.log(original()) // => 20
 
 ### copy on write!
 
-`inheritfn` implements copy-on-write behaviour similarly to
-`Object.create`:
+`inheritfn` implements copy-on-write behaviour similarly to regular
+Object prototypical inheritance via `Object.create`:
 
 ```js
 // write to wrapper.value
@@ -58,7 +58,7 @@ function's value with the same key is shadowed by this new value.
 on the new function will not restore access to the original function's
 key**. You'll need to delete the key from `newFn.__proxy__`.
 
-### __proto__
+### `__proto__`
 
 To round out the prototypical inheritance 'simulation' a bit more.
 ```js
