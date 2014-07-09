@@ -5,7 +5,8 @@ Prototypical inheritance for functions.
 Enables you to wrap a function with another function without losing
 access to values defined on the original function.
 
-`inheritfn` implements copy-on-write behaviour like `Object.create`.
+`inheritfn` implements copy-on-write behaviour similarly to regular
+Object prototypical inheritance via `Object.create`.
 
 ## Example
 
