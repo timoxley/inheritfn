@@ -9,18 +9,18 @@ test('keys exhibit copy-on-write behaviour', function(t) {
     return original.value
   }
 
-  original.value = 10
-
-  t.equal(original(), 10)
 
   function wrapper() {
     return wrapper.value
   }
 
+  original.value = 10
+
+  t.equal(original(), 10)
+
   t.equal(wrapper(), undefined)
 
   fninherit(original, wrapper)
-
   t.equal(wrapper(), 10)
 
   original.value = 20
@@ -35,6 +35,12 @@ test('keys exhibit copy-on-write behaviour', function(t) {
 
   // __proto__ simulation
   t.equal(wrapper.__proto__, original)
+
+  // new keys aren't available :(
+  original.otherValue = 30
+  console.log('original.otherValue', original.otherValue)
+  console.log('wrapper.otherValue', wrapper.otherValue)
+  t.equal(wrapper.otherValue, undefined)
 
   t.end()
 })

@@ -8,6 +8,16 @@ access to values defined on the original function.
 `inheritfn` implements copy-on-write behaviour similarly to regular
 Object prototypical inheritance via `Object.create`.
 
+## Deprecated.
+
+TIL that you can set the lookup prototype on functions too.
+
+```js
+Object.setPrototypeOf(dst, src)
+// or maybe
+dst.__proto__ = src
+```
+
 ## Example
 
 ```js
@@ -21,9 +31,9 @@ function wrapper() {
   return wrapper.value
 }
 
-fncreate(original, wrapper)
-
 original.value = 10
+
+fncreate(original, wrapper)
 
 // wrapper inherits values from original
 console.log(original()) // => 10
@@ -55,9 +65,14 @@ console.log(original()) // => 20
 new function.
 * If you write to a key on the new function, access to the original
 function's value with the same key is shadowed by this new value.
-* Unlike regular JavaScript prototypical inheritance, **deleting a key
+
+### Caveats
+Unlike regular JavaScript prototypical inheritance:
+* **deleting a key
 on the new function will not restore access to the original function's
 key**. You'll need to delete the key from `newFn.__proxy__`.
+* New properties created on the original function will not appear on the
+new function.
 
 ### `__proto__`
 
